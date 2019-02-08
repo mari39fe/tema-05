@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Objekt</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <div id="liste">
+
+    </div>
+
+
+
+    <script>
+        let dyr = [];
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+
+            hentJson();
+
+
+            async function hentJson() {
+
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1eBNqPb_SgxmA2kVMKTKGLCg5qyrGd0HoXPzaYXe7qJA");
+                console.log(jsonData);
+                dyr = await jsonData.json();
+                console.log(dyr);
+                derSkalVæreEnFunktion();
+
+            }
+
+
+            function derSkalVæreEnFunktion() {
+
+                let destination = document.querySelector("#liste");
+
+                dyr.forEach(dyr => {
+                    destination.innerHTML += `<h3>${dyr.navn}</h3> <p>${dyr.type}</p> <img src=${dyr.billede}> <p>${dyr.levested}</p><br>`;
+
+                })
+
+            }
+        }
+    </script>
+</body>
+
+</html>

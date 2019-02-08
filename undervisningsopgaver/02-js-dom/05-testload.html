@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 Testload</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        #square {
+            background-color: green;
+            background-size: auto;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+        }
+
+        #circle {
+            background-color: red;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="square"></div>
+
+
+    <div id="circle"></div>
+
+
+
+    <script>
+        function start() {
+            console.log("start")
+            let square = document.querySelector("#square");
+            let circle = document.querySelector("#circle");
+
+            square.innerHTML = `<img src="http://helf-kea.dk/test/frog.png" alt="frog">`;
+            circle.innerHTML = `<img src="http://helf-kea.dk/test/gris.png" alt="pig">`;
+        }
+
+        document.addEventListener("DOMContentLoaded", start);
+    </script>
+
+
+
+
+
+</body>
+
+</html>

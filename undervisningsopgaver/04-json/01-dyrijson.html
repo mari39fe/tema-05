@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Objekt</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <div id="liste">
+
+    </div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            //JSON: Fetch = hent filen
+            //JSON: Await = vent med at fortsætte, til alt indhold er hentet ind
+            //JSON: Promise - det det hedder når js stopper og venter på at json loader
+            //JSON: AJAX - andet term for asynkront kald
+
+            let dyr = [];
+
+            //De tomme hard brackets betyder at det er et tomt array
+            // Det samme med curly brackets betyder tomt objekt
+
+
+            hentJson();
+
+            //hent JSON fil i asynkron funktion
+            async function hentJson() {
+                //henter json data filen
+                let myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1eBNqPb_SgxmA2kVMKTKGLCg5qyrGd0HoXPzaYXe7qJA");
+                //console log så vi kan se hvad der sker
+                console.log(myJson);
+                // vises først når alt er loaded
+                dyr = await myJson.json();
+                //console log
+                console.log(dyr);
+
+                derSkalVæreEnFunktion();
+
+            }
+
+            // dyrijson2 er det samme princip men med almindelige funktioner istedet for anonyme
+
+
+            function derSkalVæreEnFunktion() {
+
+                let destination = document.querySelector("#liste");
+
+                dyr.forEach(dyr => {
+                    destination.innerHTML += `<h3>${dyr.Navn}</h3> <p>${dyr.Type}</p> <img src=${dyr.Billede}> <p>${dyr.Levested}</p><br>`;
+
+                })
+
+            }
+        })
+    </script>
+</body>
+
+</html>

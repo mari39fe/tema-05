@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Objekt</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <div id="info">
+        <h2></h2>
+        <img src="" alt="">
+        <p>Type: </p>
+        <p id="p2">Levested: </p>
+
+    </div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            let dyr = {
+                "Navn": "Gris",
+                "Type": "Pattedyr",
+                "Billede": "http://helf-kea.dk/test/gris.png",
+                "Levested": "Svinefarme"
+            }
+
+            console.log(dyr)
+
+            let destination = document.querySelector("#info")
+            //let grisNavn = `Navn: ${dyr.Navn} Type: ${dyr.Type} Levested: ${dyr.Levested}`;
+
+            let grisNavn = `Navn: ${dyr.Navn}`
+            let grisType = `Type: ${dyr.Type}`
+            let grisLevested = `Levested: ${dyr.Levested}`
+
+            destination.querySelector("h2").textContent = grisNavn;
+            destination.querySelector("img").src = dyr.Billede;
+            destination.querySelector("p").textContent = grisType;
+            destination.querySelector("#p2").textContent = grisLevested;
+
+
+        })
+    </script>
+</body>
+
+</html>

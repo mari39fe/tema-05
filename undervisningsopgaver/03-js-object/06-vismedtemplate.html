@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Objekt</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2vw;
+
+        }
+
+        #box {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        @media (min-width:600px) {
+            #liste {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="liste">
+
+    </div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            let dyr = [{
+                    "Navn": "Gris",
+                    "Type": "Pattedyr",
+                    "Billede": "http://helf-kea.dk/test/gris.png",
+                    "Levested": "Svinefarme"
+                },
+
+                {
+                    "Navn": "Frø",
+                    "Type": "Amfibie",
+                    "Billede": "http://helf-kea.dk/test/frog.png",
+                    "Levested": "Søer"
+                },
+
+                {
+                    "Navn": "Ræv",
+                    "Type": "Pattedyr",
+                    "Billede": "http://helf-kea.dk/test/fox.png",
+                    "Levested": "Skove"
+                },
+
+
+                {
+                    "Navn": "Sild",
+                    "Type": "Fisk",
+                    "Billede": "http://helf-kea.dk/test/sild.jpg",
+                    "Levested": "Havet"
+                },
+                {
+                    "Navn": "Krokodille",
+                    "Type": "Krybdyr",
+                    "Billede": "http://helf-kea.dk/test/kroko.jpg",
+                    "Levested": "Florida"
+                }
+
+            ];
+
+
+            let destination = document.querySelector("#liste");
+
+            dyr.forEach(dyr => {
+                destination.innerHTML += `<div id="box"><h3>${dyr.Navn}</h3> <p>${dyr.Type}</p> <img src=${dyr.Billede}> <p>${dyr.Levested}</p><br></div>`;
+
+            })
+        })
+    </script>
+</body>
+
+</html>
