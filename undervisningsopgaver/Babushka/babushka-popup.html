@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Objekt</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2vw;
+
+        }
+
+        #box {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        @media (min-width:500px) {
+            #liste {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (min-width:800px) {
+            #liste {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        }
+
+        header {
+            background-color: darkorange;
+
+        }
+
+        footer {
+            background: #666;
+            color: #ddd;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <img src="imgs/red_star.svg" alt="">
+    </header>
+
+    <div id="liste">
+
+    </div>
+
+    <footer>
+        <section><address>Addresse: <br>Grønnegade 97<br>1234 København K </address>
+            <aside>Åbningstider: <br> Mandag – fredag 10:30 – 22:00<br>Lørdag 12:00 – 23:00</aside>
+        </section>
+    </footer>
+
+    <script>
+        let retter = [];
+        let filter = "alle";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+
+            hentJson();
+
+
+            async function hentJson() {
+
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+                console.log(jsonData);
+                retter = await jsonData.json();
+                console.log(retter);
+                derSkalVæreEnFunktion();
+
+            }
+
+
+            function derSkalVæreEnFunktion() {
+
+                let destination = document.querySelector("#liste");
+
+                retter.forEach(ret => {
+                    destination.innerHTML += `<div id="box"><img src="imgs/small/${ret.billede}-sm.jpg"><h2>${ret.navn}</h2> <p>${ret.kort}</p><p>Pris: ${ret.pris},-</p><br></div>`;
+
+                })
+
+            }
+        }
+    </script>
+</body>
+
+</html>
