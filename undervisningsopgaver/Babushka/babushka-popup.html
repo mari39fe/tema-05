@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01 Objekt</title>
+    <title>Babushka pop up</title>
     <link rel="stylesheet" href="">
 
     <style>
@@ -57,8 +57,27 @@
 </head>
 
 <body>
+
+    <div id="popup">
+        <div id="luk">
+
+            <button> X </button>
+        </div>
+        <div id="indhold"></div>
+    </div>
+
     <header>
         <img src="imgs/red_star.svg" alt="">
+    </header>
+
+    <header class="menu">
+        <h1>Alle</h1>
+        <nav>
+            <button class="filter valgt" data-hold="alle">Alle</button>
+            <button class="filter" data-hold="forretter">Forretter</button>
+            <button class="filter" data-hold="hovedretter">Hovedretter</button>
+            <button class="filter" data-hold="desserter">Desserter</button>
+        </nav>
     </header>
 
     <div id="liste">
@@ -74,6 +93,7 @@
     <script>
         let retter = [];
         let filter = "alle";
+        let destination = document.querySelector("#liste");
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -95,16 +115,44 @@
 
 
             function derSkalVæreEnFunktion() {
-
-                let destination = document.querySelector("#liste");
-
+                dest.innerHTML = "";
                 retter.forEach(ret => {
-                    destination.innerHTML += `<div id="box"><img src="imgs/small/${ret.billede}-sm.jpg"><h2>${ret.navn}</h2> <p>${ret.kort}</p><p>Pris: ${ret.pris},-</p><br></div>`;
-
-                })
-
+                    if (filter == "alle" || filter == ret.kategori) {
+                        let template = `<div id="box"><img src="imgs/small/${ret.billede}-sm.jpg"><h2>${ret.navn}</h2> <p>${ret.kort}</p><p>Pris: ${ret.pris},-</p><br></div>`;
+                        dest.insertAdjacentHTML("beforeend", template);
+                        dest.lastElementChild.addEventListener("click", () => {
+                            visSingle(ret);
+                        });
+                    }
+                });
             }
-        }
+
+            function visSingle(ret) {
+                document.querySelector("#indhold").innerHTML = `<article class="ret"><img src="imgs/large/${ret.billede}.jpg"><h2>${ret.navn}</h2> <p>${ret.lang}</p><p>Pris: ${ret.pris},-</p><br></article>`;
+
+                document.querySelector("#popup").style.display = "block";
+                document.querySelector("#popup #luk").addEventListener("click", close);
+            }
+
+            function close() {
+                document.querySelector("#popup").style.display = "none";
+            }
+
+
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            });
+
+            function filtrering() {
+                filter = this.getAttribute("data-hold");
+                document.querySelector("h1").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                });
+                this.classList.add("valgt");
+                derSkalVæreEnFunktion();
+            }
     </script>
 </body>
 

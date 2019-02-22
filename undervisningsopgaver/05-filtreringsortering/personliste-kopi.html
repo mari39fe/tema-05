@@ -34,13 +34,14 @@
 
         }
 
-
+        .valgt {
+            background-color: lightblue;
+        }
 
 
         img {
             width: 100%;
         }
-
     </style>
 
 
@@ -48,6 +49,12 @@
 
 <body>
 
+    <div class="menu">
+        <h1>Alle</h1>
+        <button class="filter valgt" data-hold="alle">ALLE</button>
+        <button class="filter" data-hold="a">Hold A</button>
+        <button class="filter" data-hold="b">Hold B</button>
+    </div>
 
     <div id="liste">
 
@@ -57,13 +64,17 @@
 
     <script>
         let personer = [];
+        let filter = "alle";
 
         document.addEventListener("DOMContentLoaded", start);
 
 
         function start() {
 
+            let destination = document.querySelector("#liste");
+
             hentJson();
+
 
 
             async function hentJson() {
@@ -78,17 +89,34 @@
 
 
             function derSkalVæreEnFunktion() {
-
-                let destination = document.querySelector("#liste");
-
+                destination.innerHTML = ""
                 personer.forEach(person => {
-                    destination.innerHTML += `<div id="box"><h2>${person.navn}</h2> <a href="https://github.com/${person.github}">Github</a><img src=${person.billede}><br></div>`;
-
+                    if (filter == "alle" || person.hold == filter) {
+                        destination.innerHTML += `<div id="box"><h2>${person.navn}</h2> <a href="https://github.com/${person.github}">Github</a><img src=${person.billede}><p>Hold: ${person.hold}</p></div>`
+                    }
                 })
 
-            }
-        }
 
+
+
+            }
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+
+            function filtrering() {
+                filter = this.getAttribute("data-hold");
+                document.querySelector("h1").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+
+                derSkalVæreEnFunktion();
+            }
+
+        }
     </script>
 </body>
 
