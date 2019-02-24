@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vwp0tej.css">
+
+</head>
+
+<body>
+
+    <!----------------------- HER STARTER TOPNAV ----------------------------->
+
+
+    <header>
+        <div id="burgermenu">
+            <div class="ikon">☰</div>
+        </div>
+
+        <div class="topnav" id="myTopnav">
+            <a class="logo" href="index.html">LOGO
+                <!-- Her skal være et billede af logo mofo-->
+                <!--her kan indsættes div med icon--></a>
+            <a href="menu.html">MENU</a>
+            <a href="book.html">BOOK</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+
+            <!-- Smid evt et grid omkring naven i desktop udgave-->
+
+
+
+
+        </div>
+
+
+        <div class="dropdownbox">
+            <div class="sidebar">
+                <a href="menu.html">MENU</a>
+                <a href="book.html">BOOK</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <h1 class="menu_">Alle</h1>
+    <div class="menu">
+
+        <button class="filter valgt" data-hold="pizza">PIZZA</button>
+        <button class="filter" data-hold="pasta">PASTA</button>
+        <button class="filter" data-hold="bruchetta">BRUCHETTA</button>
+        <button class="filter" data-hold="drinks">DRINKS</button>
+    </div>
+
+    <div id="popup">
+        <div id="luk">
+            <button>X</button>
+        </div>
+        <div id="indhold"></div>
+    </div>
+
+    <div id="liste">
+
+    </div>
+
+
+    <!-- single view grid 1fr - lav innerhtml i js og definer en kasse til grid, og derefter en div til tekst og en div til billede - flex og css -->
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

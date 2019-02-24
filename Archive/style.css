@@ -42,12 +42,11 @@ INDHOLD
     display: block;
     color: black;
     text-align: center;
-    justify-content: space-around;
-    padding: 5vw 16px 0 16px;
+    padding: 14px 16px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 30px;
-    font-family: din-condensed, sans-serif;
+    font-size: 14px;
+    font-family: "inter ui";
 }
 
 /* Change the color of links on hover */
@@ -70,7 +69,7 @@ INDHOLD
 #burgermenu {
     position: fixed;
     top: 10px;
-    left: 20px;
+    right: 20px;
     display: none;
     z-index: 2;
 
@@ -80,6 +79,9 @@ INDHOLD
     position: fixed;
 
 }
+
+
+
 
 /************************ HER STARTER TOPNAV - MEDIAQUERIES ****************************/
 
@@ -146,13 +148,14 @@ INDHOLD
     right: 0;
     text-align: right;
     font-family: din-condensed, sans-serif;
+    background-color: rgba(0, 0, 0, 0.83);
     font-size: 50px;
     margin-bottom: 1px;
     padding: 300px 30px 30px;
     color: #ffffff;
     display: flex;
-    height: 100vh;
     flex-direction: column;
+    height: 100vh;
 
 }
 
@@ -188,18 +191,17 @@ INDHOLD
     height: 100vh;
     top: 11vw;
     left: 0vw;
-
 }
 
 #logo_splash {
     background-image: url(menu/final-logoer-05-kopi.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     justify-content: center;
     width: 80vw;
     height: 50vw;
-    top: 30vw;
+    top: 35vw;
     left: 10vw;
 
 }
@@ -207,10 +209,10 @@ INDHOLD
 .arrow_down {
     background-image: url(menu/arrowdown.png);
     background-size: 100%;
-    position: relative;
+    position: absolute;
     width: 10vw;
     height: 10vw;
-    top: 10vw;
+    top: 105vw;
     left: 45vw;
     border: none;
 }
@@ -257,13 +259,6 @@ h2 {
     border-bottom: 5px white solid;
     margin: 10px 50px;
     padding: 10px;
-}
-
-h3 {
-    font-family: din-condensed, sans-serif;
-    font-size: 8vw;
-    color: #ffffff;
-    margin: 10vw 2vw 0vw 2vw;
 }
 
 p {
@@ -379,7 +374,6 @@ a:hover {
 
 
 .menu button {
-
     flex-direction: row;
     flex-basis: 50px;
     flex-grow: 1;
@@ -391,8 +385,14 @@ a:hover {
     flex-direction: row;
 }
 
-.overskrift {
+.menu_h1 {
     font-size: 90px;
+    text-align: center;
+}
+
+
+#box img {
+    width: 100%
 }
 
 #box {
@@ -402,39 +402,27 @@ a:hover {
     margin: 10px auto;
 }
 
-#box img {
-    width: 100%;
-}
-
 #box_tekst {}
 
 #box_billede {}
 
 #box p {}
 
-#indhold img,
-#popup img {
-    width: 100%;
-}
 
 #popup {
     top: 0;
-    width: 50vw;
-    height: 50vh;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    background-color: rgba(59, 59, 59, 0.46);
-
+    background-color: lightblue;
     display: none;
 }
 
 #indhold {
     min-height: 50vh;
-    background-color: rgba(59, 59, 59, 0.46);
-    width: 50vw;
-    margin: auto;
-    border: 2px white solid;
-
-
+    background-color: white;
+    width: 70vw;
+    margin: 4rem auto;
 }
 
 #luk {
@@ -450,20 +438,7 @@ a:hover {
 
 /************************ HER STARTER BOOK - INDHOLD ******************************/
 
-.book_button {
-    position: absolute;
-    left: 39vw;
-    top: 120vw;
-}
 
-.kalender {
-    background-image: url(menu/kalender.png);
-    background-size: 100%;
-    width: 90vw;
-    height: 50vw;
-    position: absolute;
-    left: 5vw;
-}
 
 
 
@@ -502,19 +477,6 @@ footer {
 
 }
 
-@media only screen and (min-width: 1000px) {
-    footer {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .column_left,
-    .column_middle,
-    .column_right {
-        flex-basis: 100px;
-        flex-grow: 1;
-    }
-}
 
 /************************ HER STARTER MEDIA - TABLET ******************************/
 
