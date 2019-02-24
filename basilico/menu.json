@@ -1,0 +1,95 @@
+[{
+        "titel": "rocket",
+        "billede": "pizza1.jpg",
+        "beskrivelse": "tomato, mozzarella, parmaham, rocket, pesto",
+        "pris": "12",
+        "kategori": "pizza"
+                },
+
+    {
+        "titel": "serrano",
+        "billede": "pizza2.jpg",
+        "beskrivelse": "tomato, mozzarella, serranoham, basil, chili",
+        "pris": "12",
+        "kategori": "pizza"
+                },
+
+    {
+        "titel": "bianco",
+        "billede": "pizza3.jpg",
+        "beskrivelse": "tomato, mozzarella, spinach, ricotta, basil, pepper",
+        "pris": "14",
+        "kategori": "pizza"
+                },
+
+    {
+        "titel": "penne",
+        "billede": "pasta1.jpg",
+        "beskrivelse": "penne, pepper, pesto, tomato",
+        "pris": "10",
+        "kategori": "pasta"
+                },
+
+    {
+        "titel": "bolognese",
+        "billede": "pasta2.jpg",
+        "beskrivelse": "spaghetti, bolognese, parmesan",
+        "pris": "12",
+        "kategori": "pasta"
+                },
+
+    {
+        "titel": "truffle",
+        "billede": "pasta3.jpg",
+        "beskrivelse": "linguine, mushroom, truffle, parmesan, basil",
+        "pris": "14",
+        "kategori": "pasta"
+                },
+
+    {
+        "titel": "burrata",
+        "billede": "bruchetta1.jpg",
+        "beskrivelse": "burrata, pepper, tomato, basil",
+        "pris": "6",
+        "kategori": "bruchetta"
+                },
+
+    {
+        "titel": "fig and goatcheese",
+        "billede": "bruchetta2.jpg",
+        "beskrivelse": "fig, goatcheese, balsamico",
+        "pris": "6",
+        "kategori": "bruchetta"
+                },
+
+    {
+        "titel": "mushroom",
+        "billede": "bruchetta3.jpg",
+        "beskrivelse": "ricotta, mushroom, thyme",
+        "pris": "6",
+        "kategori": "bruchetta"
+                },
+
+    {
+        "titel": "aperol spritz",
+        "billede": "drink1.jpg",
+        "beskrivelse": "aperol, prosecco, soda",
+        "pris": "5",
+        "kategori": "drinks"
+                },
+
+    {
+        "titel": "espresso martini",
+        "billede": "drink2.jpg",
+        "beskrivelse": "espresso, kahlua, vodka",
+        "pris": "8",
+        "kategori": "drinks"
+                },
+
+    {
+        "titel": "lemon prosecco",
+        "billede": "drink3.jpg",
+        "beskrivelse": "prosecco, lemon extract, eggwhite",
+        "pris": "8",
+        "kategori": "drinks"
+                }]

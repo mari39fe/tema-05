@@ -152,7 +152,7 @@ INDHOLD
 }
 
 #logo_topnav {
-    background-image: url(pasta/final-logoer-05.png);
+    background-image: url(menu/final-logoer-05-kopi.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
@@ -171,7 +171,7 @@ INDHOLD
 /************************ HER STARTER SPLASH ******************************/
 
 #splash {
-    background-image: url(pasta/tomater.gif);
+    background-image: url(menu/tomater.gif);
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
@@ -182,7 +182,7 @@ INDHOLD
 }
 
 #logo_splash {
-    background-image: url(pasta/final-logoer-05.png);
+    background-image: url(menu/final-logoer-05-kopi.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
@@ -195,7 +195,7 @@ INDHOLD
 }
 
 .arrow_down {
-    background-image: url(pasta/arrowdown.png);
+    background-image: url(menu/arrowdown.png);
     background-size: 100%;
     position: absolute;
     width: 10vw;
@@ -210,18 +210,26 @@ INDHOLD
 /************************ HER STARTER GENERELT ******************************/
 
 html {
-    background-image: url(pasta/struktur.jpg);
-    background-size: cover;
-    position: absolute;
+
     width: 100vw;
     height: 100vh;
+
     scroll-behavior: smooth;
+
 
 }
 
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
+    width: 100%;
+    background-position: fixed;
+    background-image: url(menu/struktur.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 }
 
 h1 {
@@ -250,8 +258,6 @@ p {
 }
 
 button {
-    left: 38vw;
-    position: absolute;
     font-family: din-condensed, sans-serif;
     font-size: 6vw;
     color: #ffffff;
@@ -298,7 +304,7 @@ a:hover {
 /************************ HER STARTER INDEX - INDHOLD ******************************/
 
 #menu {
-    background-image: url(pasta/menu.jpg);
+    background-image: url(menu/menu.jpg);
     background-size: 100%;
     position: absolute;
     height: 40vw;
@@ -307,7 +313,7 @@ a:hover {
 }
 
 .book {
-    background-image: url(pasta/restaurant.jpg);
+    background-image: url(menu/restaurant.jpg);
     background-size: 100%;
     position: absolute;
     height: 40vw;
@@ -347,7 +353,33 @@ a:hover {
 
 /************************ HER STARTER MENU - INDHOLD ******************************/
 
+#liste {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2vw;
 
+}
+
+#box {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.menu button {
+    left: auto;
+    position: static;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu h1 {
+    font-size: 15vw;
+}
 
 
 /************************ HER STARTER BOOK - INDHOLD ******************************/
@@ -375,12 +407,12 @@ a:hover {
 
 
 footer {
-    background: rgba(31, 31, 31, 0.34);
+    background: rgba(31, 31, 31, 0.5);
     position: absolute;
     top: 300vw;
     width: 100vw;
     text-align: center;
-    border: none;
+
 
 }
 
