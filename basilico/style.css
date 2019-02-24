@@ -213,7 +213,6 @@ html {
 
     width: 100vw;
     height: 100vh;
-
     scroll-behavior: smooth;
 
 
@@ -222,12 +221,10 @@ html {
 body {
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 100%;
-    background-position: fixed;
+    background-attachment: fixed;
     background-image: url(menu/struktur.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 
 
 }
@@ -360,27 +357,68 @@ a:hover {
 
 }
 
-#box {
-    border: 1px solid black;
-    text-align: center;
-}
 
 .menu button {
-    left: auto;
-    position: static;
-    flex-direction: column;
-    align-items: center;
+
+    flex-direction: row;
+    flex-basis: 50px;
+    flex-grow: 1;
 }
 
 .menu {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .menu h1 {
     font-size: 15vw;
 }
 
+#box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#box_tekst {
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+#box_billede {
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+#box p {}
+
+
+#popup {
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: lightblue;
+    display: none;
+}
+
+#indhold {
+    min-height: 50vh;
+    background-color: white;
+    width: 70vw;
+    margin: 4rem auto;
+}
+
+#luk {
+    position: fixed;
+    right: 2rem;
+    padding-right: 2rem;
+}
+
+#luk button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
 
 /************************ HER STARTER BOOK - INDHOLD ******************************/
 

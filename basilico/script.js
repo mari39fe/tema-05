@@ -29,8 +29,8 @@ ikon.addEventListener("click", function () {
 
 // HER STARTER MENUEN MED GRID OG JSON
 
-let menu = [];
-let filter = "pizza";
+let personer = [];
+let filter = "alle";
 
 document.addEventListener("DOMContentLoaded", start);
 
@@ -48,40 +48,56 @@ function start() {
         let jsonData = await fetch("menu.json");
         console.log(jsonData);
         personer = await jsonData.json();
-        console.log(menu);
+        console.log(personer);
 
-    })
-derSkalVæreEnFunktion();
+        derSkalVæreEnFunktion();
 
-}
-
-
-function derSkalVæreEnFunktion() {
-    destination.innerHTML = ""
-    menu.forEach(menuItem => {
-        if (filter == "pizza" || menuItem.kategori == filter) {
-            destination.innerHTML += `<div id="box"><h2>${menuItem.titel}</h2> <img src=${menuItem.billede}><p>${menuItem.beskrivelse}</p><p>${menuItem.pris}</p></div>`
-        }
-    })
+    }
 
 
+    function derSkalVæreEnFunktion() {
+        destination.innerHTML = ""
+        personer.forEach(person => {
+            if (filter == "pizza" || person.kategori == filter) {
+                let template = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
+
+                destination.insertAdjacentHTML("beforeend", template);
+
+                destination.lastElementChild.addEventListener("click", () => {
+                    visSingle(person);
+                });
+
+                function visSingle(person) {
+                    document.querySelector("#indhold").innerHTML = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
+
+                    document.querySelector("#popup").style.display = "block";
+                    document.querySelector("#popup #luk").addEventListener("click", close);
+
+                }
+
+                function close() {
+                    document.querySelector("#popup").style.display = "none";
+                }
+
+            }
+        })
 
 
-}
+    }
 
-document.querySelectorAll(".filter").forEach(elm => {
-    elm.addEventListener("click", filtrering);
-})
-
-function filtrering() {
-    filter = this.getAttribute("data-hold");
-    document.querySelector("h1").textContent = this.textContent;
     document.querySelectorAll(".filter").forEach(elm => {
-        elm.classList.remove("valgt");
+        elm.addEventListener("click", filtrering);
     })
-    this.classList.add("valgt");
 
-    derSkalVæreEnFunktion();
-}
+    function filtrering() {
+        filter = this.getAttribute("data-hold");
+        document.querySelector("h1").textContent = this.textContent;
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.classList.remove("valgt");
+        })
+        this.classList.add("valgt");
+
+        derSkalVæreEnFunktion();
+    }
 
 }
