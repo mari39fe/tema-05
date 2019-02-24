@@ -179,17 +179,18 @@ INDHOLD
     height: 100vh;
     top: 11vw;
     left: 0vw;
+    overflow: hidden;
 }
 
 #logo_splash {
     background-image: url(menu/final-logoer-05-kopi.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    position: absolute;
+    position: relative;
     justify-content: center;
     width: 80vw;
     height: 50vw;
-    top: 35vw;
+    top: 30vw;
     left: 10vw;
 
 }
@@ -197,10 +198,10 @@ INDHOLD
 .arrow_down {
     background-image: url(menu/arrowdown.png);
     background-size: 100%;
-    position: absolute;
+    position: relative;
     width: 10vw;
     height: 10vw;
-    top: 105vw;
+    top: 10vw;
     left: 45vw;
     border: none;
 }
@@ -246,6 +247,13 @@ h2 {
     padding: 1.5vw;
 }
 
+h3 {
+    font-family: din-condensed, sans-serif;
+    font-size: 8vw;
+    color: #ffffff;
+    margin: 10vw 2vw 0vw 2vw;
+}
+
 p {
     font-family: din-condensed, sans-serif;
     font-size: 6vw;
@@ -261,7 +269,7 @@ button {
     text-align: center;
     text-transform: uppercase;
     background-color: rgba(245, 245, 220, 0);
-    padding: 1vw 5vw;
+    padding: 1vw 1vw;
     margin-top: 30vw;
 
 }
@@ -371,24 +379,20 @@ a:hover {
     flex-direction: row;
 }
 
-.menu h1 {
-    font-size: 15vw;
+.overskrift {
+    font-size: 20vw;
 }
 
 #box {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 90vw;
+    margin: 10px auto;
 }
 
-#box_tekst {
-    flex-basis: 200px;
-    flex-grow: 1;
-}
+#box_tekst {}
 
-#box_billede {
-    flex-basis: 200px;
-    flex-grow: 1;
-}
+#box_billede {}
 
 #box p {}
 
@@ -422,7 +426,20 @@ a:hover {
 
 /************************ HER STARTER BOOK - INDHOLD ******************************/
 
+.book_button {
+    position: absolute;
+    left: 39vw;
+    top: 120vw;
+}
 
+.kalender {
+    background-image: url(menu/kalender.png);
+    background-size: 100%;
+    width: 90vw;
+    height: 50vw;
+    position: absolute;
+    left: 5vw;
+}
 
 
 

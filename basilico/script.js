@@ -91,7 +91,7 @@ function start() {
 
     function filtrering() {
         filter = this.getAttribute("data-hold");
-        document.querySelector("h1").textContent = this.textContent;
+        document.querySelector("h3").textContent = this.textContent;
         document.querySelectorAll(".filter").forEach(elm => {
             elm.classList.remove("valgt");
         })
