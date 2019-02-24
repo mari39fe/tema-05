@@ -58,8 +58,8 @@ function start() {
     function derSkalVæreEnFunktion() {
         destination.innerHTML = ""
         personer.forEach(person => {
-            if (filter == "pizza" || person.kategori == filter) {
-                let template = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
+            if (filter == "all" || person.kategori == filter) {
+                let template = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>€ ${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
 
                 destination.insertAdjacentHTML("beforeend", template);
 
@@ -68,7 +68,7 @@ function start() {
                 });
 
                 function visSingle(person) {
-                    document.querySelector("#indhold").innerHTML = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
+                    document.querySelector("#indhold").innerHTML = `<div id="box"><div id="box_tekst"><h2>${person.titel}</h2> <p>${person.beskrivelse}</p><p>€ ${person.pris}</p></div><div id="box_billede"><img src=menu/${person.billede}></div></div>`;
 
                     document.querySelector("#popup").style.display = "block";
                     document.querySelector("#popup #luk").addEventListener("click", close);

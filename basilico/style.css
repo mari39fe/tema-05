@@ -70,7 +70,7 @@ INDHOLD
 #burgermenu {
     position: fixed;
     top: 10px;
-    left: 20px;
+    left: 95vw;
     display: none;
     z-index: 2;
 
@@ -418,7 +418,8 @@ a:hover {
 }
 
 #popup {
-    top: 0;
+    top: 10vw;
+    left: 25vw;
     width: 50vw;
     height: 50vh;
     position: fixed;
@@ -439,7 +440,7 @@ a:hover {
 
 #luk {
     position: fixed;
-    right: 2rem;
+    left: 80vw;
     padding-right: 2rem;
 }
 
